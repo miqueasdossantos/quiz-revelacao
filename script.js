@@ -1,19 +1,9 @@
 const quizData = [
-  { question: "Qual é a capital do Brasil?", options: ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"], correct: "Brasília" },
+  { question: "Qual é a capital do Brasil 12?", options: ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"], correct: "Brasília" },
   { question: "Quantos meses tem um ano?", options: ["10", "12", "11", "13"], correct: "12" },
   { question: "Quanto é 5 x 5?", options: ["10", "15", "25", "30"], correct: "25" },
   { question: "Qual o maior planeta do Sistema Solar?", options: ["Marte", "Júpiter", "Saturno", "Terra"], correct: "Júpiter" },
   { question: "Quem pintou a Mona Lisa?", options: ["Leonardo da Vinci", "Michelangelo", "Van Gogh", "Picasso"], correct: "Leonardo da Vinci" },
-  { question: "Qual é o oceano mais profundo?", options: ["Atlântico", "Pacífico", "Índico", "Ártico"], correct: "Pacífico" },
-  { question: "Quantas cores tem o arco-íris?", options: ["6", "7", "8", "5"], correct: "7" },
-  { question: "Quantos continentes existem?", options: ["5", "6", "7", "8"], correct: "7" },
-  { question: "Em que país fica a Torre Eiffel?", options: ["Alemanha", "França", "Itália", "Inglaterra"], correct: "França" },
-  { question: "Qual é o menor país do mundo?", options: ["Mônaco", "Vaticano", "Malta", "Liechtenstein"], correct: "Vaticano" },
-  { question: "Quantos dias tem uma semana?", options: ["6", "7", "8", "9"], correct: "7" },
-  { question: "Quanto é 10 dividido por 2?", options: ["2", "5", "10", "20"], correct: "5" },
-  { question: "Qual é a fórmula química da água?", options: ["CO2", "O2", "H2O", "NaCl"], correct: "H2O" },
-  { question: "Em que continente está o Brasil?", options: ["Ásia", "Europa", "América do Sul", "África"], correct: "América do Sul" },
-  { question: "Qual é o maior animal terrestre?", options: ["Elefante", "Girafa", "Hipopótamo", "Rinoceronte"], correct: "Elefante" },
 ];
 
 let currentQuestionIndex = 0;
@@ -24,7 +14,7 @@ const nextButton = document.getElementById("next-btn");
 const resultContainer = document.getElementById("result");
 const finalMessage = document.getElementById("final-message");
 
-// Função para carregar a pergunta atual
+// Função para carregar a pergunta
 function loadQuestion() {
   const currentQuestion = quizData[currentQuestionIndex];
   questionContainer.innerHTML = `
@@ -41,9 +31,9 @@ function loadQuestion() {
         .join("")}
     </div>
   `;
-  nextButton.disabled = true; // Desativa o botão inicialmente
+  nextButton.disabled = true;
 
-  // Seleciona todas as opções e adiciona o evento para habilitar o botão ao selecionar
+  // Adiciona evento para habilitar o botão quando uma opção for selecionada
   const options = document.querySelectorAll('input[name="answer"]');
   options.forEach((option) =>
     option.addEventListener("change", () => {
@@ -52,7 +42,7 @@ function loadQuestion() {
   );
 }
 
-// Função para verificar a resposta
+// Verifica a resposta e avança para a próxima pergunta
 function checkAnswer() {
   const selectedOption = document.querySelector('input[name="answer"]:checked');
   if (selectedOption) {
@@ -69,7 +59,7 @@ function checkAnswer() {
   }
 }
 
-// Função para mostrar o resultado final
+// Mostra o resultado final
 function showResult() {
   questionContainer.classList.add("hidden");
   nextButton.classList.add("hidden");
@@ -86,5 +76,5 @@ function showResult() {
 // Eventos
 nextButton.addEventListener("click", checkAnswer);
 
-// Carrega a primeira pergunta ao iniciar
+// Inicializa o quiz
 loadQuestion();
