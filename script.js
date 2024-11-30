@@ -24,31 +24,35 @@ const nextButton = document.getElementById("next-btn");
 const resultContainer = document.getElementById("result");
 const finalMessage = document.getElementById("final-message");
 
-// Carrega a pergunta atual no container
+// Função para carregar a pergunta atual
 function loadQuestion() {
   const currentQuestion = quizData[currentQuestionIndex];
   questionContainer.innerHTML = `
     <h3>${currentQuestionIndex + 1}. ${currentQuestion.question}</h3>
-    ${currentQuestion.options
-      .map(
-        (option) =>
-          `<label>
-            <input type="radio" name="answer" value="${option}">
-            ${option}
-          </label>`
-      )
-      .join("")}
+    <div class="options">
+      ${currentQuestion.options
+        .map(
+          (option, index) =>
+            `<label>
+              <input type="radio" name="answer" value="${option}" id="option${index}">
+              ${option}
+            </label>`
+        )
+        .join("")}
+    </div>
   `;
-  nextButton.disabled = true; // Desativa o botão até que uma resposta seja selecionada
+  nextButton.disabled = true; // Desativa o botão inicialmente
+
+  // Seleciona todas as opções e adiciona o evento para habilitar o botão ao selecionar
   const options = document.querySelectorAll('input[name="answer"]');
   options.forEach((option) =>
     option.addEventListener("change", () => {
-      nextButton.disabled = false; // Habilita o botão ao selecionar uma resposta
+      nextButton.disabled = false; // Habilita o botão quando uma resposta é selecionada
     })
   );
 }
 
-// Verifica a resposta e avança para a próxima pergunta
+// Função para verificar a resposta
 function checkAnswer() {
   const selectedOption = document.querySelector('input[name="answer"]:checked');
   if (selectedOption) {
@@ -62,12 +66,10 @@ function checkAnswer() {
     } else {
       showResult();
     }
-  } else {
-    alert("Por favor, selecione uma resposta antes de continuar.");
   }
 }
 
-// Mostra o resultado final
+// Função para mostrar o resultado final
 function showResult() {
   questionContainer.classList.add("hidden");
   nextButton.classList.add("hidden");
@@ -84,5 +86,5 @@ function showResult() {
 // Eventos
 nextButton.addEventListener("click", checkAnswer);
 
-// Inicializa o quiz
+// Carrega a primeira pergunta ao iniciar
 loadQuestion();
