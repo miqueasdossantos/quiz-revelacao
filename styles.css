@@ -1,12 +1,17 @@
-body {
-  font-family: Arial, sans-serif;
+/* Resetando margens e padding para evitar erros de layout */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #ffccf2 50%, #cceaff 50%);
+  background: linear-gradient(to right, #ff99cc 50%, #99ccff 50%); /* Fundo dividido entre rosa e azul */
 }
 
 .quiz-container {
@@ -14,13 +19,15 @@ body {
   border-radius: 10px;
   padding: 20px;
   max-width: 600px;
+  width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
+  z-index: 10;
 }
 
 h1 {
-  background: linear-gradient(to right, #ff99c2 50%, #99ccff 50%);
+  background: linear-gradient(to right, #ff66b2 50%, #66b3ff 50%); /* Título com a mesma divisão de cores */
   color: white;
   padding: 10px 0;
   border-radius: 10px;
@@ -34,12 +41,17 @@ h1 {
 button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #ff66b2; /* Cor rosa */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff3385; /* Rosa mais forte ao passar o mouse */
 }
 
 button:disabled {
@@ -65,6 +77,7 @@ input[type="radio"] {
 
 #result h2 {
   font-size: 24px;
+  margin-bottom: 20px;
 }
 
 #final-message {
@@ -72,11 +85,23 @@ input[type="radio"] {
   color: #333;
 }
 
-button {
-  background-color: #ff99c2;
-  transition: background-color 0.3s;
+#next-btn {
+  background-color: #ff66b2;
+  color: white;
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-button:hover {
-  background-color: #99ccff;
+#next-btn:hover {
+  background-color: #ff3385;
+}
+
+/* Garantir que a parte do conteúdo esteja bem posicionada */
+.quiz-container {
+  position: relative;
+  z-index: 1;
 }
