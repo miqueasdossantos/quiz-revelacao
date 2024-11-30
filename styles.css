@@ -1,12 +1,12 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background: linear-gradient(to right, #ffccf2 50%, #cceaff 50%);
 }
 
 .quiz-container {
@@ -16,9 +16,14 @@ body {
   max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
+  position: relative;
 }
 
 h1 {
+  background: linear-gradient(to right, #ff99c2 50%, #99ccff 50%);
+  color: white;
+  padding: 10px 0;
+  border-radius: 10px;
   margin-bottom: 20px;
 }
 
@@ -34,6 +39,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 button:disabled {
@@ -45,8 +51,32 @@ label {
   display: block;
   margin: 10px 0;
   cursor: pointer;
+  font-size: 18px;
 }
 
 input[type="radio"] {
   margin-right: 10px;
+}
+
+.options {
+  text-align: left;
+  margin-top: 15px;
+}
+
+#result h2 {
+  font-size: 24px;
+}
+
+#final-message {
+  font-size: 18px;
+  color: #333;
+}
+
+button {
+  background-color: #ff99c2;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #99ccff;
 }
