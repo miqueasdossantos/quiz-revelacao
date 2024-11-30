@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chá Revelação - Quiz</title>
+  <title>Quiz - Chá Revelação</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="quiz-container">
-    <h1>Chá Revelação - Quiz</h1>
-    <div id="quiz">
-      <!-- Perguntas vão aqui -->
+    <h1>Quiz - Chá Revelação</h1>
+    <div id="question-container">
+      <!-- As perguntas e opções serão exibidas aqui -->
     </div>
-    <button id="submit">Enviar Respostas</button>
+    <button id="next-btn" disabled>Próxima</button>
     <div id="result" class="hidden">
-      <h2>Parabéns! O segredo é...</h2>
-      <p class="revelation">💙 É um menino! 💙</p>
+      <h2>Resultado</h2>
+      <p id="final-message"></p>
     </div>
   </div>
   <script src="script.js"></script>
