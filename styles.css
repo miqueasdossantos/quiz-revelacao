@@ -94,3 +94,41 @@ a {
 a:hover {
   background-color: #3385ff;
 }
+
+.reveal-container {
+  background-color: #99ccff;
+  color: white;
+  text-align: center;
+  padding: 50px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.reveal-container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.reveal-container p {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.animation {
+  font-size: 36px;
+  margin-top: 30px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+
+
