@@ -1,4 +1,4 @@
-/* Resetando margens e padding para evitar erros de layout */
+/* Estilo básico e reseta margens */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #ff99cc 50%, #99ccff 50%); /* Fundo dividido entre rosa e azul */
+  background: linear-gradient(to right, #ff99cc 50%, #99ccff 50%);
 }
 
 .quiz-container {
@@ -22,16 +22,12 @@ body {
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  position: relative;
-  z-index: 10;
 }
 
 h1 {
-  background: linear-gradient(to right, #ff66b2 50%, #66b3ff 50%); /* Título com a mesma divisão de cores */
-  color: white;
+  color: #333; /* Neutro */
   padding: 10px 0;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  font-size: 24px;
 }
 
 .hidden {
@@ -41,17 +37,16 @@ h1 {
 button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #ff66b2; /* Cor rosa */
+  background-color: #ff66b2;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #ff3385; /* Rosa mais forte ao passar o mouse */
+  background-color: #ff3385;
 }
 
 button:disabled {
@@ -85,23 +80,17 @@ input[type="radio"] {
   color: #333;
 }
 
-#next-btn {
-  background-color: #ff66b2;
+a {
+  text-decoration: none;
+  background-color: #66b3ff;
   color: white;
-  padding: 12px 25px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 15px;
 }
 
-#next-btn:hover {
-  background-color: #ff3385;
-}
-
-/* Garantir que a parte do conteúdo esteja bem posicionada */
-.quiz-container {
-  position: relative;
-  z-index: 1;
+a:hover {
+  background-color: #3385ff;
 }
