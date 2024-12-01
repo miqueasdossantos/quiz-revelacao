@@ -1,5 +1,5 @@
 const quizData = [
-  { question: "Qual é a capital do Brasil 12?", options: ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"], correct: "Brasília" },
+  { question: "Qual é a capital do Brasil?", options: ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"], correct: "Brasília" },
   { question: "Quantos meses tem um ano?", options: ["10", "12", "11", "13"], correct: "12" },
   { question: "Quanto é 5 x 5?", options: ["10", "15", "25", "30"], correct: "25" },
   { question: "Qual o maior planeta do Sistema Solar?", options: ["Marte", "Júpiter", "Saturno", "Terra"], correct: "Júpiter" },
@@ -13,6 +13,7 @@ const questionContainer = document.getElementById("question-container");
 const nextButton = document.getElementById("next-btn");
 const resultContainer = document.getElementById("result");
 const finalMessage = document.getElementById("final-message");
+const revealLink = document.getElementById("reveal-link");
 
 // Função para carregar a pergunta
 function loadQuestion() {
@@ -33,11 +34,10 @@ function loadQuestion() {
   `;
   nextButton.disabled = true;
 
-  // Adiciona evento para habilitar o botão quando uma opção for selecionada
   const options = document.querySelectorAll('input[name="answer"]');
   options.forEach((option) =>
     option.addEventListener("change", () => {
-      nextButton.disabled = false; // Habilita o botão quando uma resposta é selecionada
+      nextButton.disabled = false;
     })
   );
 }
@@ -68,13 +68,12 @@ function showResult() {
   const score = (correctAnswers / quizData.length) * 100;
   if (score >= 70) {
     finalMessage.textContent = `Parabéns! Você acertou ${correctAnswers} de ${quizData.length} (${score.toFixed(0)}%) e passou no quiz!`;
+    revealLink.classList.remove("hidden");
   } else {
     finalMessage.textContent = `Infelizmente, você acertou ${correctAnswers} de ${quizData.length} (${score.toFixed(0)}%). Tente novamente!`;
   }
 }
 
-// Eventos
 nextButton.addEventListener("click", checkAnswer);
 
-// Inicializa o quiz
 loadQuestion();
