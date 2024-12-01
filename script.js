@@ -1,9 +1,81 @@
 const quizData = [
-  { question: "Qual é a capital do Brasil?", options: ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"], correct: "Brasília" },
-  { question: "Quantos meses tem um ano?", options: ["10", "12", "11", "13"], correct: "12" },
-  { question: "Quanto é 5 x 5?", options: ["10", "15", "25", "30"], correct: "25" },
-  { question: "Qual o maior planeta do Sistema Solar?", options: ["Marte", "Júpiter", "Saturno", "Terra"], correct: "Júpiter" },
-  { question: "Quem pintou a Mona Lisa?", options: ["Leonardo da Vinci", "Michelangelo", "Van Gogh", "Picasso"], correct: "Leonardo da Vinci" },
+  {
+    question: "Em que ano o casal se conheceu?",
+    options: ["2014", "2016", "2018", "2020"],
+    correct: "2014"
+  },
+  {
+    question: "Qual é o prato favorito do casal?",
+    options: ["Pizza", "Sushi", "Churrasco", "Macarrão"],
+    correct: "Pizza"
+  },
+  {
+    question: "Qual o hobby que o casal gosta de fazer juntos?",
+    options: ["Cozinhar", "Assistir séries", "Viajar", "Ir à academia"],
+    correct: "Viajar"
+  },
+   {
+    question: "Qual é o doce favorito da mãe?",
+    options: ["Chocolate", "Brownie", "Sorvete", "Doce de Leite"],
+    correct: "Doce de Leite"
+  },
+  {
+    question: "Quantos semanas de gestação tem o bebe?",
+    options: ["5", "11", "13", "15"],
+    correct: "11"
+  },
+  {
+    question: "Qual o mês de nascimento do pai?",
+    options: ["Janeiro", "Fevereiro", "Julho", "Setembro"],
+    correct: "Fevereiro"
+  },
+  {
+    question: "Qual a cor favorita da mãe?",
+    options: ["Lilás", "Rosa", "Verde", "Bege"],
+    correct: "Bege"
+  },
+    {
+    question: "Onde o casal passou a lua de mel?",
+    options: ["Bariloche", "Gramado", "Maragogi", "Natal"],
+    correct: "Gramado"
+  },
+   {
+    question: "Qual foi o primeiro desejo da mãe?",
+    options: ["Pizza", "Parmegiana", "Pipoca", "Churros"],
+    correct: "Pipoca"
+  },
+  {
+    question: "Qual foi a reação do pai ao saber da gravidez?",
+    options: ["Chorou de emoção", "Ficou em choque", "Jogou o boné e a sandalia", "Saiu correndo"],
+    correct: "Jogou o boné e a sandalia"
+  },
+  {
+    question: "Em que ano o casal se casou?",
+    options: ["2019", "2020", "2021", "2022"],
+    correct: "2021"
+  },
+   {
+    question: "Quando foi descoberto que o bebê estava a caminho?",
+    options: ["Agosto", "Setembro", "Outubro", "Novembro"],
+    correct: "Outubro"
+  },
+  {
+    question: "Como casal se conheceu?",
+    options: ["Faculdade", "Trabalho", "Amigos em Comum", "Redes Sociais"],
+    correct: "Amigos em Comum"
+  },
+   {
+    question: "Qual foi o primeiro presente dado ao bebê pelo casal?",
+    options: ["Roupinha", "Um bichinho de pelúcia", "Berço", "Livros infantis"],
+    correct: "Roupinha"
+  },
+   {
+    question: "Qual os nomes escolhidos pelo casal para o bebe?",
+    options: ["Cleiton e Glaucia", "Cosmo e Velma", "Davi e Marina", "Ana Raio e Zé trovão"],
+    correct: "Davi e Marina"
+  },
+
+  
 ];
 
 let currentQuestionIndex = 0;
